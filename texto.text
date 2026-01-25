@@ -1,0 +1,22 @@
+
+      <section class="nos">
+    <div class="container-nos">
+
+        <img src="/AVIAO.jpg" class="aviao" alt="Avião">
+
+        <div class="descricao-nos">
+            <h1>QUEM SOMOS NÓS</h1>
+            <p>
+                Somos uma empresa especializada em criar experiências de viagem únicas e memoráveis.
+                Atuamos conectando pessoas a destinos históricos, culturais e inspiradores ao redor do mundo,
+                sempre com foco em qualidade, segurança e atendimento personalizado.
+
+                Nossa missão é transformar cada viagem em uma jornada completa, oferecendo suporte desde o
+                planejamento até o retorno.
+
+                Estamos sempre prontos para atender você.
+            </p>
+        </div>
+
+    </div>
+</section>

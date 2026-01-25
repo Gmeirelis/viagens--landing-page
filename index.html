@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <title>VillageWay</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+
+        }
+
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 30px;
+
+        }
+
+        .titulo img {
+            height: 90px;
+
+            width: auto;
+
+            display: block;
+            margin-right: 200px;
+
+        }
+
+        .nav {
+            display: flex;
+            list-style: none;
+            gap: 80px;
+
+        }
+
+        .nav li {
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav li:hover {
+            color: rgb(14, 70, 223);
+            border-bottom: 2px solid rgb(14, 70, 223);
+        }
+
+        /* HERO */
+        .hero-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-right: 350px;
+            gap: 70px;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: center;
+            padding: 100px 0px 0px;
+
+        }
+
+        .hero img {
+            width: 1700px;
+            height: 900px;
+            position: relative;
+            bottom: 45px;
+            padding: 0px 0px 100px 0px;
+            filter: brightness(60%);
+
+        }
+
+
+        .vilarejo img {
+            width: 500px;
+            height: 500px;
+        }
+
+        .conatiner-text h1 {
+            position: relative;
+            left: 50px;
+            font-size: 50px;
+        }
+
+        .hero-text {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+            position: absolute;
+            color: white;
+            margin-top: 300px;
+
+
+        }
+
+        .hero-text button {
+
+            width: 150px;
+            height: 60px;
+            border-radius: 15px;
+            background-color: rgba(83, 43, 226, 0);
+            color: white;
+            border: none;
+            font-weight: bold;
+            margin-left: 500px;
+            margin-top: 50px;
+            border: 1px solid rgb(248, 238, 238);
+
+        }
+
+        .hero-text p {
+            font-size: 30px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .hero-text h1 {
+            font-size: 60px;
+        }
+
+
+        .slide-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUp 1.8s ease forwards;
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* minhas viagens */
+
+        .viagem {
+            padding-bottom: 100px;
+        }
+
+        .intro {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .container-card {
+            display: flex;
+            justify-content: center;
+            margin-top: 80px;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .card-1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 400px;
+            background-color: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+
+        }
+
+        .card-1:hover {
+            transform: translateY(-8px);
+        }
+
+        .card-1 img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-1 h2 {
+            margin: 16px 0 8px;
+            font-size: 22px;
+            letter-spacing: 2px;
+        }
+
+        .card-1 .descricao {
+            padding: 0 20px 20px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        /* quem somos nos*/
+        .nos {
+            padding: 100px 0;
+        }
+
+        /* container de referência */
+        .container-nos {
+            position: relative;
+            height: 80vh;
+            max-width: 1800px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        /* imagem do banner */
+        .aviao {
+            width: 150%;
+
+            object-fit: cover;
+        }
+
+        /* camada escura para leitura */
+        .container-nos::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: 1;
+        }
+
+        /* TEXTO SOBRE A IMAGEM */
+        .descricao-nos {
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            left: 60px;
+            transform: translateY(-50%);
+            max-width: 600px;
+            color: #fff;
+        }
+
+        .descricao-nos h1 {
+            font-size: 42px;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .descricao-nos p {
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /****************************/
+
+        .estilo h1 {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* estilo */
+        .estilo {
+            padding: 100px 0px;
+        }
+
+        .estilo h1 {
+            position: relative;
+            bottom: 50px;
+        }
+
+
+
+
+        .container-estilo {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .estilo-card {
+            display: flex;
+            gap: 30px;
+        }
+
+        .img-estilo {
+            height: 300px;
+            width: 300px;
+            object-fit: cover;
+        }
+
+
+        .img-box {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        /* texto escondido */
+        .texto-hover {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1px;
+
+            opacity: 0;
+            transition: 0.4s ease;
+        }
+
+        /* efeito hover */
+        .img-box:hover .texto-hover {
+            opacity: 1;
+        }
+
+        /* leve zoom */
+        .img-estilo {
+            transition: transform 0.4s ease;
+        }
+
+        .img-box:hover .img-estilo {
+            transform: scale(1.1);
+        }
+
+        /****depiomento***/
+
+        .depoimentos {
+            padding: 120px 10% 110px;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+
+        .depoimentos h1 {}
+
+        .depoimentos h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        .depoimentos-container {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card-depoimento {
+            background: #fff;
+            padding: 30px;
+            width: 300px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-depoimento img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .card-depoimento .texto {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .card-depoimento h4 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .card-depoimento span {
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* conato */
+
+        .contato {
+            padding: 80px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container-contato {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            width: 100%;
+            max-width: 600px;
+            padding: 40px;
+            border-radius: 8px;
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .container-contato img {
+            width: 100%;
+            max-height: 180px;
+            object-fit: contain;
+        }
+
+        .container-contato h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .container-contato label {
+            font-size: 14px;
+            color: #444;
+        }
+
+        .container-contato input {
+            padding: 14px;
+            border-radius: 6px;
+            border: 1px solid rgba(0, 0, 0, 0.25);
+            font-size: 15px;
+        }
+
+        .container-contato input:focus {
+            outline: none;
+            border-color: #0077ff;
+        }
+
+        .container-contato button {
+            margin-top: 20px;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            background: #0077ff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .container-contato button:hover {
+            background: #005fd1;
+        }
+
+        /* foooter*/
+          
+         .foot{
+            background-color: black;
+         }
+
+
+        .foot-container {
+            background-color: #333;
+            padding: 50px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 90px;
+
+        }
+
+        .foot-descricao {
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+             text-align: justify;
+            gap: 30px;
+            color: #f5f5f5;
+
+
+        }
+
+        .foot-descricao img {
+            width: 180px;
+            max-height: 180px;
+            object-fit: contain;
+        }
+
+        .foot-descricao p {
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .servico h2 {
+            color: #e3f0ff;
+            border-bottom: 3px solid blue;
+        }
+
+        .servico {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        .servico ul {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .servico ul {
+            color: white;
+        }
+
+        .servico ul li:hover {
+            color: #0077ff;
+        }
+
+        .servico-loca {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .servico-loca h2 {
+            color: #e3f0ff;
+            border-bottom: 3px solid blue;
+        }
+
+        .servico-loca {
+            color: white;
+        }
+
+        .servico-loca ul {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .social i {
+            font-size: 30px;
+        }
+
+        .social {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+        }
+        .footer-copy{
+            display: flex;
+            flex-direction: row;
+              background-color: #333;
+              justify-content: center;
+              padding: 50px 0px;
+        }
+         .footer-copy {
+            color: white;
+         }
+    </style>
+</head>
+
+<body>
+
+    <section class="navegacao">
+        <header>
+            <div class="titulo">
+                <img src="logo.png" alt="">
+            </div>
+            <ul class="nav">
+                <li>Inicio</li>
+                <li>MinhaViagem</li>
+                <li>NosEncontre</li>
+                <li>Conselhos</li>
+            </ul>
+        </header>
+    </section>
+    <main>
+        <section class="hero">
+            <img src="/3109.jpg" alt="Vilarejo europeu">
+
+            <div class="hero-text">
+
+
+                <h1 style="color: rgb(217, 217, 233);" class="slide-up">Viajar é descobrir novos jeitos de viver</h1>
+                <p class="slide-up">Explore vilarejos europeus cheios de charme, história e tranquilidade, <br>com
+                    dicas, rotas e inspirações para sua próxima aventura.</p>
+                <button class="slide-up">VER MAIS</button>
+            </div>
+        </section>
+
+        <section class="viagem">
+            <div class="intro">
+                <h1 style="color: rgba(5, 83, 228, 0.726); font-size: 60px;"> <b>VIAGENS RECOMENDADA</b></h1>
+                <P>Descubra nossas melhores promoções e períodos, ideais para você viver momentos inesquecíveis aqui no
+                    Japaratinga Lounge Resort</P>
+            </div>
+
+            <div class="container-card">
+                <div class="card-1">
+                    <img src="/egito.jpg" alt="Egito">
+
+                    <h2>EGITO</h2>
+                    <p class="descricao">
+                        O Egito é um dos destinos mais fascinantes do mundo, berço de uma das civilizações mais antigas
+                        da humanidade.
+                        Às margens do rio Nilo, o país revela um cenário único onde templos milenares, pirâmides
+                        monumentais e desertos
+                        dourados convivem com cidades vibrantes e uma cultura viva.
+                    </p>
+                </div>
+
+                <div class="card-1">
+                    <img src="/italia.jpg" alt="Egito">
+
+                    <h2>ITALIA</h2>
+                    <p class="descricao">
+                        A Itália é um dos destinos mais completos do mundo, combinando uma riqueza histórica
+                        inigualável, gastronomia premiada e paisagens que variam de picos nevados a praias de águas
+                        cristalinas.
+                    </p>
+                </div>
+
+                <div class="card-1">
+                    <img src="/ROMA.jpg" alt="Egito">
+
+                    <h2>ROMA</h2>
+                    <p class="descricao">
+                        Roma é um museu a céu aberto onde cada esquina revela 3 mil anos de história. É o destino onde o
+                        passado glorioso dos imperadores se encontra com a vibração da vida italiana moderna, entre
+                        cafés, vespas e praças monumentais.
+                    </P>
+                </div>
+
+                <div class="card-1">
+                    <img src="/ALEMANHA.jpg" alt="Egito">
+
+                    <h2>ALEMANHA</h2>
+                    <p class="descricao">
+                        A Alemanha é um destino que combina tradição e modernidade de forma exemplar. Castelos
+                        medievais, cidades históricas e vilarejos encantadores convivem com centros urbanos organizados,
+                        tecnológicos e culturalmente ricos.
+                    </P>
+                </div>
+
+                <div class="card-1">
+                    <img src="/CHILE.jpg" alt="Egito">
+
+                    <h2>CHILE</h2>
+                    <p class="descricao">
+                        O Chile é um país de contrastes impressionantes, conhecido por sua geografia única que se
+                        estende do deserto mais árido do mundo às geleiras da Patagônia. Com paisagens naturais
+                        deslumbrantes, o país oferece experiências inesquecíveis para quem busca aventura, contato com a
+                        natureza e cultura.
+                    </P>
+                </div>
+
+                <div class="card-1">
+                    <img src="/EUA.jpg" alt="Egito">
+
+                    <h2>ESTADOS UNIDOS</h2>
+                    <p class="descricao">
+                        Os Estados Unidos oferecem uma experiência única marcada pela diversidade cultural, paisagens
+                        impressionantes e cidades icônicas. De metrópoles vibrantes como Nova York e Los Angeles a
+                        parques nacionais grandiosos, o país reúne inovação, entretenimento e natureza em um único
+                        destino.
+                    </P>
+                </div>
+
+                <div class="card-1">
+                    <img src="/israel.jpg" alt="Egito">
+
+                    <h2>ISRAEL</h2>
+                    <p class="descricao">
+                        Israel é um destino singular onde história, espiritualidade e inovação coexistem em harmonia.
+                        Com locais sagrados para diferentes religiões, cidades milenares e paisagens desérticas, o país
+                        oferece uma experiência cultural profunda e única.
+
+                        Ao mesmo tempo, Israel se destaca pela modernidade, tecnologia avançada e vida urbana dinâmica,
+                        especialmente em cidades como Tel Aviv, proporcionando um contraste marcante entre o antigo e o
+                        contemporâneo.
+                    </P>
+                </div>
+
+                <div class="card-1">
+                    <img src="/brasil.jpg" alt="Egito">
+
+                    <h2>BRASIL</h2>
+                    <p class="descricao">
+                        O Brasil é um país de dimensões continentais, reconhecido por sua diversidade natural, riqueza
+                        cultural e hospitalidade. De praias paradisíacas e florestas tropicais a cidades vibrantes, o
+                        país proporciona experiências intensas e autênticas.
+
+                        Com uma cultura marcada pela música, gastronomia e festas populares, o Brasil encanta viajantes
+                        em busca de lazer, aventura e contato com a natureza, oferecendo destinos para todos os perfis e
+                        estilos de viagem.
+                    </P>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="estilo">
+
+            <h1 style="color: rgba(5, 83, 228, 0.726);"> QUAL É O SEU ESTILO ?</h1>
+            <div class="container-estilo">
+
+                <div class="estilo-card">
+
+                    <div class="img-box">
+                        <img src="./estilo/montanha.jpg" class="img-estilo">
+                        <span class="texto-hover">Montanha</span>
+                    </div>
+
+                    <div class="img-box">
+                        <img src="./estilo/floresta.jpg" class="img-estilo">
+                        <span class="texto-hover">Floresta</span>
+                    </div>
+
+                </div>
+
+                <div class="estilo-card">
+
+                    <div class="img-box">
+                        <img src="./estilo/praia.jpg" class="img-estilo">
+                        <span class="texto-hover">Praia</span>
+                    </div>
+
+                    <div class="img-box">
+                        <img src="./estilo/urbano.jpg" class="img-estilo">
+                        <span class="texto-hover">Urbano</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="nos">
+            <div class="container-nos">
+
+                <img src="/AVIAO.jpg" class="aviao" alt="Avião">
+
+                <div class="descricao-nos">
+                    <h1>QUEM SOMOS NÓS</h1>
+                    <p>
+                        Somos uma empresa especializada em criar experiências de viagem únicas e memoráveis.
+                        Atuamos conectando pessoas a destinos históricos, culturais e inspiradores ao redor do mundo,
+                        sempre com foco em qualidade, segurança e atendimento personalizado.
+
+                        Nossa missão é transformar cada viagem em uma jornada completa, oferecendo suporte desde o
+                        planejamento até o retorno.
+
+                        Estamos sempre prontos para atender você.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <section class="depoimentos">
+            <h2>O que nossos clientes dizem</h2>
+
+            <div class="depoimentos-container">
+                <div class="card-depoimento">
+                    <img src="/pessoas/joao.jpg" alt="Foto do cliente">
+                    <p class="texto">
+                        "Serviço excelente, atendimento rápido e muito profissional."
+                    </p>
+                    <h4>João Silva</h4>
+                    <span>Cliente</span>
+                </div>
+
+                <div class="card-depoimento">
+                    <img src="/pessoas/maria.jpg" alt="Foto do cliente">
+                    <p class="texto">
+                        "Recomendo totalmente. A experiência foi acima do esperado."
+                    </p>
+                    <h4>Maria Souza</h4>
+                    <span>Empresária</span>
+                </div>
+
+                <div class="card-depoimento">
+                    <img src="/pessoas/carlos.jpg" alt="Foto do cliente">
+                    <p class="texto">
+                        "Qualidade e confiança do início ao fim."
+                    </p>
+                    <h4>Carlos Lima</h4>
+                    <span>Freelancer</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="contato">
+
+
+            <div class="container-contato">
+
+
+                <img src="logo.png">
+
+                <h1 style="color: rgba(27, 81, 196, 0.986)"> Entre em Contato</h1>
+
+                <label for="nome">nome</label>
+                <input type="text" placeholder="NOME">
+
+                <label for="nome">E-mail</label>
+                <input type=" email" placeholder="exemplo@gmail.com">
+
+                <label for="nome">Telefone</label>
+                <input type="number" placeholder="+55981164295">
+
+                <button type="submit">Enviar</button>
+
+
+
+            </div>
+
+        </section>
+        <section class="footer">
+            <footer>
+
+                <div class="foot-container">
+                    <div class="foot-descricao">
+                        <img src="/logo.png" alt="Bússula Turismo">
+                        <p>
+                            A Bússula Turismo é uma agência de viagens especializada em experiências de turismo
+                            personalizadas e inovadoras.
+                            Fundada em 18 de agosto de 2010 com a missão de transformar sonhos de viagem em roteiros
+                            reais e memoráveis, a
+                            Bússula Turismo combina expertise em planejamento, atendimento consultivo e parcerias
+                            estratégicas com
+                            fornecedores nacionais e internacionais.
+                        </p>
+                    </div>
+
+                    <div class="servico">
+
+                        <h2>Serviço</h2>
+                        <ul>
+                            <li>Planejamento e Consultoria de Viagens</li>
+                            <li>Venda de Passagens</li>
+                            <li>Pacotes de Viagem</li>
+                            <li>Transporte e Mobilidade</li>
+                        </ul>
+
+                    </div>
+
+                    <div class="servico">
+
+                        <h2>Menu</h2>
+                        <ul>
+                            <li>Inicio</li>
+                            <li>MinhaViagem</li>
+                            <li>NosEncontre</li>
+                            <li>Conselhos</li>
+                        </ul>
+
+                    </div>
+
+
+                    <div class="servico-loca">
+
+                        <h2>Localização</h2>
+                        <ul>
+                            <h3> 📍 Unidade Centro</h3>
+                            <p><strong>Endereço:</strong> Avenida das Nações, 1250 – Centro</p>
+                            <p><strong>Cidade:</strong> São Paulo – SP</p>
+                            <p><strong>Horário de atendimento:</strong></p>
+                            <p>Segunda a sexta: 9h às 18h</p>
+                            <p>Sábado: 9h às 13h</p>
+                        </ul>
+
+                        <ul>
+                            <h3> 📍 Unidade Zona Sul</h3>
+                            <p><strong>Endereço:</strong> Rua dos Viajantes, 420 – Jardim Horizonte</p>
+                            <p><strong>Cidade:</strong> São Paulo – SP</p>
+                            <p><strong>Horário de atendimento:</strong></p>
+                            <p>Segunda a sexta: 10h às 19h</p>
+                        </ul>
+                    </div>
+
+                    <div class="servico">
+
+                        <h2>Menu</h2>
+                        <ul>
+                            <li> <strong>Telefone:</strong> 958454165</li>
+                            <li><strong>E-mail:</strong> bussulaviagens@gmail.com</li>
+                            <li><strong>Nossas redes social Sociais</strong></li>
+                            <div class="social">
+
+                                <i class="fab fa-facebook-f"></i>
+
+
+                                <i class="fab fa-threads"></i>
+
+
+                                <i class="fab fa-instagram"></i>
+
+
+                                <i class="fab fa-whatsapp"></i>
+
+                            </div>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="footer-copy">
+    © 2026 Bússula Turismo — Desenvolvido por guilhermedevfront. Todos os direitos reservados.
+</div>
+</section>
+            </footer>
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+</body>
+
+</html>
