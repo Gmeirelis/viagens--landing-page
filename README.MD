@@ -11,7 +11,7 @@ Basta abrir o arquivo `index.html` no navegador.
 
 ### Acesso online
 O projeto também pode ser acessado pelo link abaixo:
-🔗 https://seu-usuario.github.io/viagens-landing-page/
+🔗https://gmeirelis.github.io/viagens--landing-page/
 
 ## Autor
 Guilherme Meireles
