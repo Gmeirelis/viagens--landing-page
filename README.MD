@@ -9,5 +9,9 @@ Landing page desenvolvida em HTML e CSS com foco em turismo e experiências de v
 ## Como executar o projeto
 Basta abrir o arquivo `index.html` no navegador.
 
+### Acesso online
+O projeto também pode ser acessado pelo link abaixo:
+🔗 https://seu-usuario.github.io/viagens-landing-page/
+
 ## Autor
 Guilherme Meireles
