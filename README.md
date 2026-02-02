@@ -32,3 +32,6 @@ Criar uma página moderna, simples e visualmente atrativa para divulgar uma agê
 1. Clone o repositório:
    ```bash
    git clone https://github.com/Gmeirelis/viagens--landing-page.git
+
+## Visualizar
+
