@@ -22,12 +22,12 @@ Criar uma página moderna, simples e visualmente atrativa para divulgar uma agê
 
 ## 📂 Estrutura do Projeto
 📁 projeto
-┣ 📁 css
-┃ ┗ 📄 style.css
-┣ 📁 img
-┃ ┗ 📄 imagens do site
-┣ 📄 index.html
-┗ 📄 README.md
+- ┣ 📁 css
+- ┃ ┗ 📄 style.css
+- ┣ 📁 img
+- ┃ ┗ 📄 imagens do site
+- ┣ 📄 index.html
+- ┗ 📄 README.md
 
 1. Clone o repositório:
    ```bash
